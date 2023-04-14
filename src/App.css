@@ -28,6 +28,10 @@ form input[type="text"] {
   color: #ddd;
 }
 
+form input:focus {
+  outline: none;
+}
+
 form button {
   background-color: #61DAFB;
   border: none;
@@ -61,12 +65,13 @@ form button {
   opacity: 0.5;
 }
 
-.task-name {
+.task-name, div.task form {
   flex-grow: 1;
 }
 
 .task span {
   position: relative;
+  bottom: 1px;
 }
 
 .task span:before {
@@ -76,7 +81,7 @@ form button {
   height: 1px;
   background-color: #ddd;
   position: absolute;
-  top: 10px;
+  top: 12px;
   transition: width .3s linear;
 }
 
@@ -110,4 +115,16 @@ button svg {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+div.task input {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  text-align: center;
+}
+
+div.task form {
+  margin: 0;
+  padding: 0;
 }

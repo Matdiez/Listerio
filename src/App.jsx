@@ -28,6 +28,14 @@ function App() {
     });
   }
 
+  function updateTask(index, newName) {
+    setTasks(prev => {
+      const newTasks = [...prev]
+      newTasks[index].name = newName
+      return newTasks
+    })
+  }
+
   function updateCheck(taskIndex, newDone) {
     setTasks((prev) => {
       const newTasks = [...prev];
@@ -60,6 +68,7 @@ function App() {
       {tasks.map((task, index) => (
         <Task
           {...task}
+          onUpdate={newName => updateTask(index, newName)}
           onDelete={() => deleteTask(index)}
           onToggle={(done) => updateCheck(index, done)}
         />

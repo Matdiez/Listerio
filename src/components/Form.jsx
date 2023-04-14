@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function Form({ onAdd }) {
   const [task, setTask] = useState("");
+
   function handleSubmit(ev) {
     ev.preventDefault();
     onAdd(task);
