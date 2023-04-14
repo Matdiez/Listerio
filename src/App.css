@@ -7,6 +7,11 @@ body {
   color: #ddd;
 }
 
+main {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
 form {
   border: 3px solid #30313D;
   border-radius: 10px;
@@ -18,11 +23,91 @@ form input[type="text"] {
   background: none;
   border: 0;
   padding: 0 10px;
+  display: block;
   width: 100%;
+  color: #ddd;
 }
 
 form button {
   background-color: #61DAFB;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.task {
+  background-color: #30313D;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+  display: flex;
+  transition: opacity .3 linear;
+  align-items: center;
+}
+
+.task svg {
+  height: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  fill: #61DAFB;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.done {
+  opacity: 0.5;
+}
+
+.task-name {
+  flex-grow: 1;
+}
+
+.task span {
+  position: relative;
+}
+
+.task span:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 10px;
+  transition: width .3s linear;
+}
+
+.done span:before {
+  width: 100%;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.delete, .edit {
+  background: none;
+  border: none;
+}
+
+.delete svg, .edit svg {
+  fill: #aaa;
+  height: 15px;
+}
+
+.delete svg:hover {
+  fill: rgb(117, 0, 0);
+}
+
+.edit svg:hover {
+  fill: orange;
+}
+
+button svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
