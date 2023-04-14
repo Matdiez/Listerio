@@ -22,6 +22,12 @@ function App() {
     });
   }
 
+  function deleteTask(indexToRemove) {
+    setTasks((prev) => {
+      return prev.filter((taskObject, index) => index !== indexToRemove);
+    });
+  }
+
   function updateCheck(taskIndex, newDone) {
     setTasks((prev) => {
       const newTasks = [...prev];
@@ -52,7 +58,11 @@ function App() {
       <h2>{getMessage()}</h2>
       <Form onAdd={addTask} />
       {tasks.map((task, index) => (
-        <Task {...task} onToggle={(done) => updateCheck(index, done)} />
+        <Task
+          {...task}
+          onDelete={() => deleteTask(index)}
+          onToggle={(done) => updateCheck(index, done)}
+        />
       ))}
     </main>
   );
