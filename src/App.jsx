@@ -29,11 +29,11 @@ function App() {
   }
 
   function updateTask(index, newName) {
-    setTasks(prev => {
-      const newTasks = [...prev]
-      newTasks[index].name = newName
-      return newTasks
-    })
+    setTasks((prev) => {
+      const newTasks = [...prev];
+      newTasks[index].name = newName;
+      return newTasks;
+    });
   }
 
   function updateCheck(taskIndex, newDone) {
@@ -60,19 +60,21 @@ function App() {
 
   return (
     <main>
-      <h1>
-        Completed {tasksCompleted}/{tasksTotal}
-      </h1>
-      <h2>{getMessage()}</h2>
-      <Form onAdd={addTask} />
-      {tasks.map((task, index) => (
-        <Task
-          {...task}
-          onUpdate={newName => updateTask(index, newName)}
-          onDelete={() => deleteTask(index)}
-          onToggle={(done) => updateCheck(index, done)}
-        />
-      ))}
+      <div className="todo-body">
+        <h1>
+          Completed {tasksCompleted}/{tasksTotal}
+        </h1>
+        <h2>{getMessage()}</h2>
+        <Form onAdd={addTask} />
+        {tasks.map((task, index) => (
+          <Task
+            {...task}
+            onUpdate={(newName) => updateTask(index, newName)}
+            onDelete={() => deleteTask(index)}
+            onToggle={(done) => updateCheck(index, done)}
+          />
+        ))}
+      </div>
     </main>
   );
 }

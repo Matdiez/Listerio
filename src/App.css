@@ -9,7 +9,14 @@ body {
 
 main {
   max-width: 400px;
-  margin: 20px auto;
+  margin: auto;
+}
+
+.todo-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
 }
 
 form {
@@ -26,6 +33,7 @@ form input[type="text"] {
   display: block;
   width: 100%;
   color: #ddd;
+  text-align: center;
 }
 
 form input:focus {
@@ -37,6 +45,10 @@ form button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+form button:hover {
+  background-color: #4dafca
 }
 
 .task {
@@ -54,6 +66,10 @@ form button {
   margin: 0 5px;
   cursor: pointer;
   fill: #61DAFB;
+}
+
+.task button {
+  padding: 0;
 }
 
 .checkbox {
